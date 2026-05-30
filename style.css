@@ -1,0 +1,533 @@
+/* Globale Stile & Farben */
+:root {
+    --bg-dark: #121212;
+    --bg-card: #1e1e1e;
+    --primary-green: #4caf50;
+    --primary-hover: #45a049;
+    --text-main: #ffffff;
+    --text-muted: #aaaaaa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #0a0a0a;
+    padding: 20px 0;
+    border-bottom: 3px solid var(--primary-green);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-green);
+}
+
+/* Hero Bereich */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://unsplash.com') no-repeat center center/cover;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Datapacks Sektion & Grid */
+.datapacks-section {
+    padding: 60px 0;
+}
+
+.datapacks-section h2 {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Datapack Karten */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-green);
+}
+
+.card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #333;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--primary-green);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    padding-right: 60px;
+}
+
+.card p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.btn-download {
+    display: block;
+    text-align: center;
+    background-color: #2a2a2a;
+    color: var(--text-main);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #444;
+    transition: all 0.3s;
+}
+
+.btn-download:hover {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+/* Footer */
+footer {
+    background-color: #0a0a0a;
+    padding: 30px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+/* --- WIKI RESPONSIVE LAYOUT --- */
+
+.wiki-wrap {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+/* Die Kategorien-Leiste (Nav-Chips) */
+.wiki-nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Lässt Chips auf Handys in die nächste Zeile rutschen */
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.nav-chip {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #333;
+    transition: all 0.2s ease;
+}
+
+.nav-chip:hover {
+    border-color: var(--primary-green);
+    background-color: #252525;
+}
+
+/* Haupt-Inhaltsbox */
+.wiki-main {
+    background-color: var(--bg-card);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 30px 20px;
+}
+
+.wiki-section {
+    margin-bottom: 50px;
+}
+
+.wiki-section:last-child {
+    margin-bottom: 0;
+}
+
+.wiki-section h2 {
+    color: var(--primary-green);
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.wiki-section p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Dateipfad-Anzeige */
+.file-path {
+    background-color: #0d0d0d;
+    padding: 10px 14px;
+    border-left: 4px solid var(--primary-green);
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    border-radius: 0 6px 6px 0;
+    word-break: break-all; /* Verhindert, dass langer Text auf Handys das Layout sprengt */
+}
+
+/* Code-Box Anpassungen */
+.code-box {
+    background-color: #1d1f21 !important; /* Passt sich dem Prism-Theme an */
+    border: 1px solid #333;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.code-header {
+    background-color: #141414;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid #252525;
+}
+
+.copy-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+/* Prism Overrides für perfektes mobiles Scrollen */
+.code-box pre[class*="language-"] {
+    margin: 0 !important;
+    padding: 16px !important;
+    background: transparent !important;
+    overflow-x: auto; /* Erlaubt horizontales Wischen auf dem Handy bei langem Code */
+}
+
+.code-box code[class*="language-"] {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 0.9rem !important;
+}
+
+/* --- MOBILE OPTIMIERUNGEN (MEDIA QUERIES) --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column; /* Logo und Menü untereinander auf kleinen Displays */
+        gap: 15px;
+        text-align: center;
+    }
+
+    .wiki-main {
+        padding: 20px 15px; /* Weniger Abstand zum Rand auf Handys */
+    }
+
+    .wiki-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Globale Stile & Farben */
+:root {
+    --bg-dark: #121212;
+    --bg-card: #1e1e1e;
+    --primary-green: #4caf50;
+    --primary-hover: #45a049;
+    --text-main: #ffffff;
+    --text-muted: #aaaaaa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #0a0a0a;
+    padding: 20px 0;
+    border-bottom: 3px solid var(--primary-green);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--primary-green);
+}
+
+/* Hero Bereich */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://unsplash.com') no-repeat center center/cover;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Datapacks Sektion & Grid */
+.datapacks-section {
+    padding: 60px 0;
+}
+
+.datapacks-section h2 {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Das Grid ordnet die Karten auf dem PC nebeneinander an */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Datapack Karten - Einheitliches Layout für alle */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Drückt den Button immer nach ganz unten */
+    min-height: 280px; /* Garantiert, dass alle Karten exakt gleich hoch sind */
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-green);
+}
+
+.card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #333;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--primary-green);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    padding-right: 60px;
+}
+
+.card p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    flex-grow: 1; /* Füllt den Raum, damit Buttons auf einer Linie stehen */
+}
+
+.btn-download {
+    display: block;
+    text-align: center;
+    background-color: #2a2a2a;
+    color: var(--text-main);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #444;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-download:hover {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+/* Footer */
+footer {
+    background-color: #0a0a0a;
+    padding: 30px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+/* --- MOBILE OPTIMIERUNGEN (FÜR HANDYS) --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Auf Handys alle Karten sauber untereinander */
+        gap: 20px;
+    }
+}
+
+.language-json {
+    padding: 16px;
+}

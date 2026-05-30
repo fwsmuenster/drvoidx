@@ -1,0 +1,6 @@
+{
+	"pack": {
+		"pack_format": 101,
+		"description": "Allows to switch to day time even if only one Player sleeps."
+	}
+}

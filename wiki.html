@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIB</title>
+    
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <header>
+        <div class="container">
+            <div class="logo">DrVoidX</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <li><a href="wiki.html" class="active">LIB</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+    <div class="wiki-wrap container">
+        
+        
+        <div class="wiki-nav">
+            <a href="#blocks" class="nav-chip">Blocks</a>
+            <a href="#bossbar" class="nav-chip">Bossbar</a>
+            <a href="#functions" class="nav-chip">Functions</a>
+        </div>
+
+       
+        <main class="wiki-main">
+            
+            
+            <section id="blocks" class="wiki-section">
+                <h2>Blocks</h2>
+                <p>Mit der funktion lib:atblocklooking kann man einen befehl an der Position ausfürhen auf den der Spieler schaut.</p>
+                
+                <div class="file-path">function lib:atblocklooking <code></code></div>
+                
+                <div class="code-box">
+                    <div class="code-header">
+                        <span>.mcfunction</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Kopieren</button>
+                    </div>
+                   
+                    <pre><code class="language-json">function lib:atblocklooking {c:"setblock ~ ~ ~ air"}</code></pre>
+                </div>
+            </section>
+
+            <section id="bossbar" class="wiki-section">
+                <h2>Bossbar</h2>
+                <p>Mit function lib:bossbar/add kann man eine Bossbar hinzufügen.
+                    b: bossbar id, n: bossbar name, c: color (red, green, blue, yellow, purple, white)
+                </p>
+                
+                <div class="file-path">function lib:bossbar/add <code></code></div>
+                
+                <div class="code-box">
+                    <div class="code-header">
+                        <span>.mcfunction</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Kopieren</button>
+                    </div>
+                    <pre><code class="language-json">function lib:bossbar/add {b:"slime_boss",n:"SlimeBoss",c:"green"}</code></pre>
+                </div>
+            </section>
+
+            
+            <section id="functions" class="wiki-section">
+                <h2>Functions (.mcfunction)</h2>
+                <p>In Functions listest du normale Minecraft-Befehle zeilenweise auf. Sie werden im Spiel ohne Schrägstrich (/) geschrieben.</p>
+                
+                <div class="file-path">Pfad: <code>data/mein_pack/functions/welcome.mcfunction</code></div>
+                
+                <div class="code-box">
+                    <div class="code-header">
+                        <span>Minecraft Command</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Kopieren</button>
+                    </div>
+                    <pre><code class="language-mcfunction">tellraw @a {"text":"Willkommen auf dem Server!","color":"green"}
+effect give @a minecraft:speed 10 1 true
+give @p minecraft:cooked_beef 64</code></pre>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    
+    <script src="https://cloudflare.com"></script>
+    <script src="https://cloudflare.com"></script>
+    
+    <script>
+        function copyCode(button) {
+            const codeBox = button.closest('.code-box');
+            const codeText = codeBox.querySelector('code').innerText;
+
+            navigator.clipboard.writeText(codeText).then(() => {
+                button.innerText = "✓ Kopiert!";
+                button.style.background = "#4caf50";
+                
+                setTimeout(() => {
+                    button.innerText = "Kopieren";
+                    button.style.background = "#333";
+                }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>
